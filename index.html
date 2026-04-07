@@ -18,10 +18,6 @@ body{
   background: linear-gradient(135deg,#8b0000,#ff1a1a,#4b0000);
   overflow-x:hidden;
   color:white;
-}
-
-/* entrada suave */
-body{
   animation: fadeIn 2s ease-in;
 }
 
@@ -41,12 +37,9 @@ body{
 }
 
 @keyframes fall{
-  to{
-    transform: translateY(110vh);
-  }
+  to{transform: translateY(110vh);}
 }
 
-/* container geral */
 .container{
   position:relative;
   z-index:2;
@@ -54,7 +47,6 @@ body{
   text-align:center;
 }
 
-/* texto revelado */
 .box{
   background: rgba(0,0,0,0.55);
   border:2px solid rgba(255,255,255,0.3);
@@ -81,7 +73,6 @@ button{
   margin-top:10px;
 }
 
-/* galeria */
 .gallery-container{
   margin-top:40px;
 }
@@ -105,12 +96,6 @@ button{
   border-radius:15px;
   border:3px solid rgba(255,255,255,0.5);
   transition:0.5s;
-  animation: fadeImg 0.5s ease;
-}
-
-@keyframes fadeImg{
-  from{opacity:0; transform:scale(0.95)}
-  to{opacity:1; transform:scale(1)}
 }
 
 .arrow{
@@ -119,11 +104,9 @@ button{
   user-select:none;
 }
 
-/* música */
 .music{
   margin-top:40px;
 }
-
 </style>
 </head>
 
@@ -137,20 +120,20 @@ button{
   <div class="box" id="textBox">
     <h3>Mensagem</h3>
     <p>
-    Eu não sei explicar exatamente quando começou, mas sei que quando percebi, você já fazia parte de tudo.
-    Não é aquele amor perfeito de filme, é mais real… cheio de erros, saudade, medo de perder e vontade de ficar.
+      Eu não sei exatamente quando começou, mas sei que virou parte de mim sem pedir permissão.
+      Não é perfeito, não é filme, mas é real — e isso já assusta mais do que qualquer coisa.
     </p>
 
     <p>
-    Eu não prometo perfeição, nem um mundo sem problemas. Mas prometo tentar, todos os dias, ser alguém que te faça sorrir mais do que te faça pensar em desistir.
+      Eu não prometo mundo ideal, mas prometo presença. Mesmo quando eu errar, mesmo quando eu for difícil de lidar.
     </p>
 
     <p>
-    Tem dias que eu não sei me expressar direito, mas isso não muda o que eu sinto. Você virou o tipo de pensamento que não sai da cabeça, mesmo quando tudo está silencioso.
+      Você virou um pensamento constante, daqueles que não desligam nem quando tudo fica em silêncio.
     </p>
 
     <p>
-    Se um dia você duvidar do que eu sinto, lembra disso: eu não escolhi te amar, simplesmente aconteceu. E agora, não sei mais como seria voltar atrás.
+      Se um dia você duvidar, lembra: ninguém escolhe sentir isso. Só acontece. E agora já aconteceu.
     </p>
   </div>
 
@@ -159,15 +142,13 @@ button{
 
     <div class="gallery">
       <div class="arrow" onclick="prev()">⬅</div>
-      <img id="photo" src="https://picsum.photos/500/300?random=1"/>
+      <img id="photo" src="IMG-20260329-WA0058.jpg"/>
       <div class="arrow" onclick="next()">➡</div>
     </div>
   </div>
 
   <div class="music">
     <h3>Nossa Música</h3>
-    <p>Se quiser colocar a música “De Love” do Pelé Milflows, usa isso aqui:</p>
-
     <iframe width="300" height="170"
       src="https://www.youtube.com/embed?listType=search&list=De%20Love%20Pel%C3%A9%20Milflows"
       frameborder="0" allowfullscreen>
@@ -187,7 +168,6 @@ function createHearts(){
   heart.style.animationDuration = (3 + Math.random()*5) + "s";
 
   document.body.appendChild(heart);
-
   setTimeout(()=> heart.remove(), 8000);
 }
 setInterval(createHearts, 300);
@@ -198,14 +178,13 @@ function toggleText(){
   box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
-// galeria
+// galeria com suas imagens
 let images = [
-  <img src="IMG_20260405_143701_412.webp">
-  <img src="">
-  <img src="">
-  <img src="">
-  <img src="">
-
+  "IMG-20260329-WA0058.jpg",
+  "IMG-20260329-WA0057.jpg",
+  "IMG_20260405_143701_412.webp",
+  "IMG-20260329-WA0048.jpg",
+  "IMG-20260329-WA0068.jpg"
 ];
 
 let index = 0;
