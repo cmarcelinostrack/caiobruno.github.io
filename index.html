@@ -47,22 +47,6 @@ body{
   text-align:center;
 }
 
-.box{
-  background: rgba(0,0,0,0.55);
-  border:2px solid rgba(255,255,255,0.3);
-  border-radius:15px;
-  padding:20px;
-  margin:20px auto;
-  max-width:700px;
-  display:none;
-  animation: pop 0.6s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(0.8);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-
 button{
   padding:10px 20px;
   border:none;
@@ -73,6 +57,25 @@ button{
   margin-top:10px;
 }
 
+/* caixa do texto */
+.box{
+  background: rgba(0,0,0,0.55);
+  border:2px solid rgba(255,255,255,0.3);
+  border-radius:15px;
+  padding:20px;
+  margin:20px auto;
+  max-width:750px;
+  display:none;
+  animation: pop 0.6s ease;
+  text-align:left;
+}
+
+@keyframes pop{
+  from{transform:scale(0.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* galeria */
 .gallery-container{
   margin-top:40px;
 }
@@ -90,8 +93,8 @@ button{
 }
 
 .gallery img{
-  width:300px;
-  height:200px;
+  width:320px;
+  height:210px;
   object-fit:cover;
   border-radius:15px;
   border:3px solid rgba(255,255,255,0.5);
@@ -104,6 +107,7 @@ button{
   user-select:none;
 }
 
+/* música */
 .music{
   margin-top:40px;
 }
@@ -118,97 +122,23 @@ button{
   <button onclick="toggleText()">Clique aqui</button>
 
   <div class="box" id="textBox">
+
     <h3>Mensagem</h3>
-    <p>
-      Eu não sei exatamente quando começou, mas sei que virou parte de mim sem pedir permissão.
-      Não é perfeito, não é filme, mas é real — e isso já assusta mais do que qualquer coisa.
-    </p>
 
-    <p>
-      Eu não prometo mundo ideal, mas prometo presença. Mesmo quando eu errar, mesmo quando eu for difícil de lidar.
-    </p>
+    <p>Eu não sei exatamente como organizar isso em palavras do jeito certo, então vou só deixar sair como vier, sem tentar deixar perfeito.</p>
 
-    <p>
-      Você virou um pensamento constante, daqueles que não desligam nem quando tudo fica em silêncio.
-    </p>
+    <p>Você entrou na minha vida de um jeito tão simples que, quando eu percebi, já tinha mudado alguma coisa aqui dentro. Não teve um momento marcante ou algo chamativo. Foi só acontecendo, devagar, sem pedir permissão.</p>
 
-    <p>
-      Se um dia você duvidar, lembra: ninguém escolhe sentir isso. Só acontece. E agora já aconteceu.
-    </p>
-  </div>
+    <p>E talvez isso seja o mais estranho. Porque não é um sentimento explosivo, nem dramático, nem cheio de grandes declarações. É algo mais quieto. Mais constante. Algo que não some, mesmo quando eu não tô pensando nele.</p>
 
-  <div class="gallery-container">
-    <div class="gallery-title">Minha galeria do amor🤍</div>
+    <p>Eu já tentei entender isso algumas vezes, mas não existe uma explicação organizada. Não encaixa em frases prontas. Só existe.</p>
 
-    <div class="gallery">
-      <div class="arrow" onclick="prev()">⬅</div>
-      <img id="photo" src="IMG-20260329-WA0058.jpg"/>
-      <div class="arrow" onclick="next()">➡</div>
-    </div>
-  </div>
+    <p>E eu não tô tentando transformar isso em algo maior do que é, nem em algo idealizado. Não tem exagero aqui, nem discurso preparado. É só o que fica quando eu paro pra pensar em você de verdade.</p>
 
-  <div class="music">
-    <h3>Nossa Música</h3>
-    <iframe width="300" height="170"
-      src="https://www.youtube.com/embed?listType=search&list=De%20Love%20Pel%C3%A9%20Milflows"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
+    <p>Você acabou ocupando um espaço na minha rotina mental sem esforço nenhum. E o mais curioso é que isso não pesa… só existe. Como algo que sempre esteve ali e eu só não tinha notado ainda.</p>
 
-</div>
+    <p>Tem dias em que isso fica mais claro, e outros em que eu simplesmente sigo a vida normal. Mas mesmo nos dias “normais”, você ainda aparece em algum pensamento solto, sem motivo.</p>
 
-<script>
-// corações
-function createHearts(){
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💜";
+    <p>E eu não sei se isso faz sentido pra você da mesma forma que faz pra mim. Talvez nem precise fazer. Mas aqui, do meu lado, isso nunca foi confuso no ponto de deixar de ser real.</p>
 
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.animationDuration = (3 + Math.random()*5) + "s";
-
-  document.body.appendChild(heart);
-  setTimeout(()=> heart.remove(), 8000);
-}
-setInterval(createHearts, 300);
-
-// texto
-function toggleText(){
-  const box = document.getElementById("textBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-
-// galeria com suas imagens
-let images = [
-  "IMG-20260329-WA0058.jpg",
-  "IMG-20260329-WA0057.jpg",
-  "IMG_20260405_143701_412.webp",
-  "IMG-20260329-WA0048.jpg",
-  "IMG-20260329-WA0068.jpg"
-];
-
-let index = 0;
-
-function update(){
-  const img = document.getElementById("photo");
-  img.style.opacity = 0;
-
-  setTimeout(()=>{
-    img.src = images[index];
-    img.style.opacity = 1;
-  },200);
-}
-
-function next(){
-  index = (index + 1) % images.length;
-  update();
-}
-
-function prev(){
-  index = (index - 1 + images.length) % images.length;
-  update();
-}
-</script>
-
-</body>
-</html>
+    <p>Eu não sei o que isso vai virar com o tempo. E, sinceramente, nem tento controlar. Mas também não é algo que desaparece fácil.</p
