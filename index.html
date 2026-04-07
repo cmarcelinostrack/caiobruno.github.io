@@ -13,17 +13,48 @@
   font-family: Arial, sans-serif;
 }
 
+/* FUNDO NOVO BONITO */
 body{
   min-height:100vh;
-  background: linear-gradient(135deg,#8b0000,#ff1a1a,#4b0000);
   overflow-x:hidden;
   color:white;
-  animation: fadeIn 2s ease-in;
+
+  background: linear-gradient(-45deg, #2b0000, #8b0000, #4b001a, #1a0000);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite, fadeIn 2s ease-in;
 }
 
+/* movimento do fundo */
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* leve entrada */
 @keyframes fadeIn{
   from{opacity:0}
   to{opacity:1}
+}
+
+/* brilho suave */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 45%);
+  animation: floatGlow 10s infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes floatGlow{
+  from{transform:translateY(0px);}
+  to{transform:translateY(20px);}
 }
 
 /* corações */
@@ -127,18 +158,4 @@ button{
 
     <p>Eu não sei exatamente como organizar isso em palavras do jeito certo, então vou só deixar sair como vier, sem tentar deixar perfeito.</p>
 
-    <p>Você entrou na minha vida de um jeito tão simples que, quando eu percebi, já tinha mudado alguma coisa aqui dentro. Não teve um momento marcante ou algo chamativo. Foi só acontecendo, devagar, sem pedir permissão.</p>
-
-    <p>E talvez isso seja o mais estranho. Porque não é um sentimento explosivo, nem dramático, nem cheio de grandes declarações. É algo mais quieto. Mais constante. Algo que não some, mesmo quando eu não tô pensando nele.</p>
-
-    <p>Eu já tentei entender isso algumas vezes, mas não existe uma explicação organizada. Não encaixa em frases prontas. Só existe.</p>
-
-    <p>E eu não tô tentando transformar isso em algo maior do que é, nem em algo idealizado. Não tem exagero aqui, nem discurso preparado. É só o que fica quando eu paro pra pensar em você de verdade.</p>
-
-    <p>Você acabou ocupando um espaço na minha rotina mental sem esforço nenhum. E o mais curioso é que isso não pesa… só existe. Como algo que sempre esteve ali e eu só não tinha notado ainda.</p>
-
-    <p>Tem dias em que isso fica mais claro, e outros em que eu simplesmente sigo a vida normal. Mas mesmo nos dias “normais”, você ainda aparece em algum pensamento solto, sem motivo.</p>
-
-    <p>E eu não sei se isso faz sentido pra você da mesma forma que faz pra mim. Talvez nem precise fazer. Mas aqui, do meu lado, isso nunca foi confuso no ponto de deixar de ser real.</p>
-
-    <p>Eu não sei o que isso vai virar com o tempo. E, sinceramente, nem tento controlar. Mas também não é algo que desaparece fácil.</p
+    <p>Você entrou na minha vida de um jeito tão simples que, quando eu percebi, já tinha mudado alguma coisa aqui dentro. Não teve um momento marcante ou algo chamativo. Foi só acontecendo, devagar, sem
