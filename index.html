@@ -54,7 +54,7 @@ body::before{
 .heart{
   position:fixed;
   top:-10px;
-  color:rgba(200,100,255,0.8);
+  color:rgba(200,100,255,0.85);
   font-size:20px;
   animation: fall linear infinite;
   z-index:0;
@@ -71,6 +71,7 @@ body::before{
   text-align:center;
 }
 
+/* botões */
 button{
   padding:10px 20px;
   border:none;
@@ -79,12 +80,17 @@ button{
   background:white;
   color:black;
   margin-top:10px;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
 }
 
 /* caixa de texto */
 .box{
-  background: rgba(0,0,0,0.6);
-  border:2px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.65);
+  border:2px solid rgba(255,255,255,0.25);
   border-radius:15px;
   padding:20px;
   margin:20px auto;
@@ -122,7 +128,20 @@ button{
   object-fit:cover;
   border-radius:15px;
   border:3px solid rgba(255,255,255,0.5);
-  transition:0.4s ease;
+  transition:0.5s ease;
+}
+
+/* setas */
+.arrow{
+  font-size:30px;
+  cursor:pointer;
+  user-select:none;
+  padding:10px;
+  transition:0.3s;
+}
+
+.arrow:hover{
+  transform:scale(1.2);
 }
 
 /* música */
@@ -155,130 +174,13 @@ button{
     <h3>Mensagem</h3>
 
     <p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida.</p>
-    
-    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro! Um ogro terrível, bruto, destrambelhado e violento.</p>
-    
-    <p>Até que um dia, do nada, esse "ogro" conheceu uma princesa... Mal sabia ele que essa princesa mudaria a vida dele toda.</p>
 
-    <p>A princesa o viu e, ao contrário de todos, ela não o temeu, ela o abraçou e, de forma tão natural, eles se tornaram amigos.</p>
-    
-    <p>Sem que ele percebesse, ela entrou na vida dele de um jeito tão simples, jamais ele imaginaria que se tornaria a pessoa mais valiosa da vida dele e que ele iria amá-la tanto. Não foi forçado. Foi só acontecendo, devagar, sem pedir permissão.</p>
+    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro.</p>
 
-    <p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. Ele percebeu que alguém como ele não seria digno de uma princesa tão linda.</p>
+    <p>Até que um dia conheceu uma princesa. Ela não teve medo dele, apenas o acolheu.</p>
 
-    <p>Então ele decidiu mudar. Se tornar melhor. A cada dia se aprimorar, melhorar seu autocontrole, ter domínio sobre seus instintos e sobre a sua brutalidade de querer resolver tudo no braço.</p>
+    <p>Sem perceber, ela virou parte da vida dele. Não foi forçado. Foi acontecendo.</p>
 
-    <p>Porém ele sabia que não conseguiria fazer tudo sozinho. Então ele recorreu ao seu antigo mestre, de quem havia se afastado e nunca voltado, por vergonha de quem ele tinha se tornado.</p>
+    <p>Ele entendeu que precisava mudar, não por obrigação, mas porque queria ser melhor para ela.</p>
 
-    <p>Diante do mestre, ele se ajoelhou, pediu misericórdia e ajuda. Mesmo esperando rejeição, o mestre, com os olhos em lágrimas, o abraçou. Disse que o esperava há muito tempo e aceitou ajudá-lo.</p>
-
-    <p>Dessa forma, com a ajuda de seu mestre, o ogro quebrou sua maldição, voltando a ser homem novamente, indo rapidamente encontrar a princesa.</p>
-
-    <p>Ao vê-lo, a princesa se surpreendeu e disse estar orgulhosa dele. Dessa forma, ele a pediu em namoro.</p>
-
-    <p>Graças à princesa, o guerreiro conseguiu se encontrar de volta em seu caminho, retornar ao seu mestre e voltar a ser humano. Ainda há muito a melhorar, mas agora ambos podem viver felizes e superar todas as dificuldades com a ajuda do mestre.</p>
-
-    <p>Para surpresa de zero pessoas: o guerreiro era eu, a princesa era você e o mestre é Deus.</p>
-  </div>
-
-  <div class="gallery-container">
-    <div class="gallery-title">Minha galeria do amor🤍</div>
-
-    <div class="gallery">
-      <div class="arrow" onclick="prev()">⬅</div>
-      <img id="photo" src="IMG-20260329-WA0058.jpg"/>
-      <div class="arrow" onclick="next()">➡</div>
-    </div>
-  </div>
-
-  <div class="music">
-    <h3>Nossa Música 🎵</h3>
-
-    <audio id="audio">
-      <source src="gaaboficial-de-love-feat-pele-milflows-1kilo-4ddf3c25.mp3" type="audio/mpeg">
-      Seu navegador não suporta áudio.
-    </audio>
-
-    <br>
-
-    <button onclick="toggleMusic()">▶ Tocar / Pausar</button>
-  </div>
-
-</div>
-
-<script>
-
-// corações
-function createHearts(){
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💜";
-
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.animationDuration = (3 + Math.random()*5) + "s";
-
-  document.body.appendChild(heart);
-  setTimeout(()=> heart.remove(), 8000);
-}
-setInterval(createHearts, 300);
-
-// texto
-function toggleText(){
-  const box = document.getElementById("textBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-
-// galeria
-let images = [
-  "IMG-20260329-WA0058.jpg",
-  "IMG-20260329-WA0057.jpg",
-  "IMG_20260405_143701_412.webp",
-  "IMG-20260329-WA0048.jpg",
-  "IMG-20260329-WA0068.jpg",
-  "IMG-20260329-WA0066.jpg",
-  "IMG-20260329-WA0071.jpg",
-  "IMG-20260329-WA0070.jpg",
-  "IMG-20260329-WA0062.jpg",
-  "IMG-20260329-WA0056.jpg",
-  "IMG-20260329-WA0054.jpg",
-  "IMG-20260329-WA0051.jpg",
-  "IMG-20260329-WA0048.jpg"
-];
-
-let index = 0;
-
-function update(){
-  const img = document.getElementById("photo");
-  img.style.opacity = 0;
-
-  setTimeout(()=>{
-    img.src = images[index];
-    img.style.opacity = 1;
-  },200);
-}
-
-function next(){
-  index = (index + 1) % images.length;
-  update();
-}
-
-function prev(){
-  index = (index - 1 + images.length) % images.length;
-  update();
-}
-
-// música
-const audio = document.getElementById("audio");
-
-function toggleMusic(){
-  if(audio.paused){
-    audio.play();
-  } else {
-    audio.pause();
-  }
-}
-
-</script>
-
-</body>
-</html>
+    <p>Ele voltou ao seu mestre, mesmo envergonhado. E foi recebido com perdão
