@@ -1,262 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
 <title>Declaração de Amor</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body {
+  margin: 0;
   font-family: Arial, sans-serif;
-}
-
-body{
-  min-height:100vh;
-  overflow-x:hidden;
-  color:white;
-
-  background: linear-gradient(-45deg, #2b0000, #8b0000, #4b001a, #1a0000);
+  background: linear-gradient(-45deg, #2b0000, #5a001f, #2b0033, #1a0000);
   background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite, fadeIn 2s ease-in;
+  animation: fundoAnimado 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
 }
 
-@keyframes gradientMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+/* Fundo animado */
+@keyframes fundoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
+/* Corações */
+.heart {
+  position: fixed;
+  top: -10px;
+  color: rgba(180, 100, 255, 0.8);
+  animation: cair linear infinite;
+  font-size: 18px;
+  z-index: 0;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 45%);
-  animation: floatGlow 10s infinite alternate;
-  pointer-events:none;
+@keyframes cair {
+  to {
+    transform: translateY(110vh);
+  }
 }
 
-@keyframes floatGlow{
-  from{transform:translateY(0px);}
-  to{transform:translateY(20px);}
+/* Caixa de texto */
+.caixa {
+  background: rgba(0,0,0,0.55);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  backdrop-filter: blur(6px);
+  animation: aparecer 0.8s ease;
 }
 
-/* corações */
-.heart{
-  position:fixed;
-  top:-10px;
-  color:rgba(200,100,255,0.85);
-  font-size:20px;
-  animation: fall linear infinite;
-  z-index:0;
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fall{
-  to{transform: translateY(110vh);}
+/* Botão chamativo */
+.btn-amor {
+  background: linear-gradient(45deg, #ff4d6d, #c9184a);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.25s;
 }
 
-.container{
-  position:relative;
-  z-index:2;
-  padding:20px;
-  text-align:center;
+.btn-amor:hover {
+  transform: scale(1.08);
 }
 
-/* botão */
-button{
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  background:white;
-  color:black;
-  margin-top:10px;
-  transition:0.3s;
+/* Galeria */
+.galeria {
+  text-align: center;
+  margin-top: 30px;
 }
 
-button:hover{
-  transform:scale(1.05);
+.img-box {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* texto */
-.box{
-  background: rgba(0,0,0,0.65);
-  border:2px solid rgba(255,255,255,0.25);
-  border-radius:15px;
-  padding:20px;
-  margin:20px auto;
-  max-width:750px;
-  display:none;
-  animation: pop 0.6s ease;
-  text-align:left;
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes pop{
-  from{transform:scale(0.8);opacity:0}
-  to{transform:scale(1);opacity:1}
+.setas {
+  margin-top: 10px;
 }
 
-/* galeria */
-.gallery-container{
-  margin-top:40px;
+.setas button {
+  background: #ffffff22;
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 10px;
 }
 
-.gallery-title{
-  font-size:22px;
-  margin-bottom:10px;
-}
-
-.gallery{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-}
-
-.gallery img{
-  width:320px;
-  height:210px;
-  object-fit:cover;
-  border-radius:15px;
-  border:3px solid rgba(255,255,255,0.5);
-  transition:0.5s ease;
-}
-
-/* setas */
-.arrow{
-  font-size:30px;
-  cursor:pointer;
-  user-select:none;
-  padding:10px;
-  transition:0.3s;
-}
-
-.arrow:hover{
-  transform:scale(1.2);
-}
-
-/* música */
-.music{
-  margin-top:50px;
-  background: rgba(0,0,0,0.4);
-  padding:20px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,0.2);
-  display:inline-block;
+/* esconder */
+.hidden {
+  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<h1 style="text-align:center; margin-top:20px;">Minha galeria do amor 🤍</h1>
 
+<!-- TEXTO -->
+<div style="text-align:center; margin-top:20px;">
   <h2>Sabe quanto tempo amo?</h2>
-  <button onclick="toggleText()">Clique aqui</button>
 
-  <div class="box" id="textBox">
+  <button class="btn-amor" onclick="mostrarTexto()">💌 Clique aqui</button>
+
+  <div id="texto" class="caixa hidden">
     <h3>Mensagem</h3>
 
-    <p>Era uma vez um homem que se perdeu no próprio orgulho...</p>
-    <p>Até conhecer alguém que mudou tudo sem pedir permissão.</p>
-    <p>Ela não salvou ele com força, salvou com presença.</p>
-    <p>Ele caiu, levantou, mudou, e voltou diferente.</p>
-    <p>E no fim, percebeu que não era sobre perfeição, era sobre amor real acontecendo aos poucos.</p>
-    <p>E sim… o guerreiro sou eu, a princesa é você, e Deus foi quem sustentou tudo isso.</p>
+    <p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida.</p>
+
+    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro.</p>
+
+    <p>Até que um dia conheceu uma princesa. Ela não teve medo dele, apenas o acolheu.</p>
+
+    <p>Sem perceber, ela virou parte da vida dele. Não foi forçado. Foi acontecendo.</p>
+
+    <p>Ele entendeu que precisava mudar, não por obrigação, mas porque queria ser melhor para ela.</p>
+
+    <p>Ele voltou ao seu mestre, mesmo envergonhado. E foi recebido com perdão.</p>
+
+    <p>Com ajuda, ele se tornou alguém melhor.</p>
+
+    <p>E no fim, o guerreiro era eu, a princesa era você e o mestre é Deus.</p>
+  </div>
+</div>
+
+<!-- GALERIA -->
+<div class="galeria">
+  <h2>Minha galeria do amor 🤍</h2>
+
+  <div class="img-box">
+    <img id="foto" src="IMG-20260329-WA0058.jpg">
   </div>
 
-  <div class="gallery-container">
-    <div class="gallery-title">Minha galeria do amor 🤍</div>
-
-    <div class="gallery">
-      <div class="arrow" onclick="prev()">⬅</div>
-      <img id="photo" src="IMG-20260329-WA0058.jpg"/>
-      <div class="arrow" onclick="next()">➡</div>
-    </div>
+  <div class="setas">
+    <button onclick="voltar()">⬅</button>
+    <button onclick="avancar()">➡</button>
   </div>
+</div>
 
-  <div class="music">
-    <h3>Nossa Música 🎵</h3>
+<!-- MÚSICA -->
+<div style="text-align:center; margin-top:40px;">
+  <h2>Nossa Música 🎵</h2>
 
-    <iframe width="300" height="170"
-      src="https://www.youtube.com/embed/o1DoLgoZD_k"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
+  <iframe width="300" height="170"
+    src="https://www.youtube.com/embed/o1DoLgoZD_k"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
 </div>
 
 <script>
-
-// corações
-function createHearts(){
+// corações roxos
+function criarCoracao() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML = "💜";
-
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.animationDuration = (3 + Math.random()*5) + "s";
-
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
   document.body.appendChild(heart);
-  setTimeout(()=> heart.remove(), 8000);
-}
-setInterval(createHearts, 300);
 
-// texto
-function toggleText(){
-  const box = document.getElementById("textBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
+  setTimeout(() => heart.remove(), 8000);
+}
+setInterval(criarCoracao, 300);
+
+// mostrar texto
+function mostrarTexto() {
+  document.getElementById("texto").classList.toggle("hidden");
 }
 
 // galeria
-let images = [
-  "IMG-20260329-WA0058.jpg",
-  "IMG-20260329-WA0057.jpg",
-  "IMG_20260405_143701_412.webp",
-  "IMG-20260329-WA0048.jpg",
-  "IMG-20260329-WA0068.jpg",
-  "IMG-20260329-WA0066.jpg",
-  "IMG-20260329-WA0071.jpg",
-  "IMG-20260329-WA0070.jpg",
-  "IMG-20260329-WA0062.jpg",
-  "IMG-20260329-WA0056.jpg",
-  "IMG-20260329-WA0054.jpg",
-  "IMG-20260329-WA0051.jpg"
+const fotos = [
+"IMG-20260329-WA0058.jpg",
+"IMG-20260329-WA0057.jpg",
+"IMG_20260405_143701_412.webp",
+"IMG-20260329-WA0048.jpg",
+"IMG-20260329-WA0068.jpg",
+"IMG-20260329-WA0066.jpg",
+"IMG-20260329-WA0071.jpg",
+"IMG-20260329-WA0070.jpg",
+"IMG-20260329-WA0062.jpg",
+"IMG-20260329-WA0056.jpg",
+"IMG-20260329-WA0054.jpg",
+"IMG-20260329-WA0051.jpg"
 ];
 
 let index = 0;
 
-function update(){
-  const img = document.getElementById("photo");
-  img.style.opacity = 0;
-
-  setTimeout(()=>{
-    img.src = images[index];
-    img.style.opacity = 1;
-  },200);
+function atualizar() {
+  document.getElementById("foto").src = fotos[index];
 }
 
-function next(){
-  index = (index + 1) % images.length;
-  update();
+function avancar() {
+  index = (index + 1) % fotos.length;
+  atualizar();
 }
 
-function prev(){
-  index = (index - 1 + images.length) % images.length;
-  update();
+function voltar() {
+  index = (index - 1 + fotos.length) % fotos.length;
+  atualizar();
 }
-
 </script>
 
 </body>
