@@ -71,7 +71,7 @@ body::before{
   text-align:center;
 }
 
-/* botões */
+/* botão */
 button{
   padding:10px 20px;
   border:none;
@@ -87,7 +87,7 @@ button:hover{
   transform:scale(1.05);
 }
 
-/* caixa de texto */
+/* texto */
 .box{
   background: rgba(0,0,0,0.65);
   border:2px solid rgba(255,255,255,0.25);
@@ -153,13 +153,6 @@ button:hover{
   border:1px solid rgba(255,255,255,0.2);
   display:inline-block;
 }
-
-.music button{
-  margin-top:10px;
-  background:#fff;
-  color:#000;
-  font-weight:bold;
-}
 </style>
 </head>
 
@@ -173,14 +166,98 @@ button:hover{
   <div class="box" id="textBox">
     <h3>Mensagem</h3>
 
-    <p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida.</p>
+    <p>Era uma vez um homem que se perdeu no próprio orgulho...</p>
+    <p>Até conhecer alguém que mudou tudo sem pedir permissão.</p>
+    <p>Ela não salvou ele com força, salvou com presença.</p>
+    <p>Ele caiu, levantou, mudou, e voltou diferente.</p>
+    <p>E no fim, percebeu que não era sobre perfeição, era sobre amor real acontecendo aos poucos.</p>
+    <p>E sim… o guerreiro sou eu, a princesa é você, e Deus foi quem sustentou tudo isso.</p>
+  </div>
 
-    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro.</p>
+  <div class="gallery-container">
+    <div class="gallery-title">Minha galeria do amor 🤍</div>
 
-    <p>Até que um dia conheceu uma princesa. Ela não teve medo dele, apenas o acolheu.</p>
+    <div class="gallery">
+      <div class="arrow" onclick="prev()">⬅</div>
+      <img id="photo" src="IMG-20260329-WA0058.jpg"/>
+      <div class="arrow" onclick="next()">➡</div>
+    </div>
+  </div>
 
-    <p>Sem perceber, ela virou parte da vida dele. Não foi forçado. Foi acontecendo.</p>
+  <div class="music">
+    <h3>Nossa Música 🎵</h3>
 
-    <p>Ele entendeu que precisava mudar, não por obrigação, mas porque queria ser melhor para ela.</p>
+    <iframe width="300" height="170"
+      src="https://www.youtube.com/embed/o1DoLgoZD_k"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-    <p>Ele voltou ao seu mestre, mesmo envergonhado. E foi recebido com perdão
+</div>
+
+<script>
+
+// corações
+function createHearts(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💜";
+
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (3 + Math.random()*5) + "s";
+
+  document.body.appendChild(heart);
+  setTimeout(()=> heart.remove(), 8000);
+}
+setInterval(createHearts, 300);
+
+// texto
+function toggleText(){
+  const box = document.getElementById("textBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+// galeria
+let images = [
+  "IMG-20260329-WA0058.jpg",
+  "IMG-20260329-WA0057.jpg",
+  "IMG_20260405_143701_412.webp",
+  "IMG-20260329-WA0048.jpg",
+  "IMG-20260329-WA0068.jpg",
+  "IMG-20260329-WA0066.jpg",
+  "IMG-20260329-WA0071.jpg",
+  "IMG-20260329-WA0070.jpg",
+  "IMG-20260329-WA0062.jpg",
+  "IMG-20260329-WA0056.jpg",
+  "IMG-20260329-WA0054.jpg",
+  "IMG-20260329-WA0051.jpg"
+];
+
+let index = 0;
+
+function update(){
+  const img = document.getElementById("photo");
+  img.style.opacity = 0;
+
+  setTimeout(()=>{
+    img.src = images[index];
+    img.style.opacity = 1;
+  },200);
+}
+
+function next(){
+  index = (index + 1) % images.length;
+  update();
+}
+
+function prev(){
+  index = (index - 1 + images.length) % images.length;
+  update();
+}
+
+</script>
+
+</body>
+</html>
