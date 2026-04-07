@@ -2,9 +2,14 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Declaração de Amor</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,14 +20,22 @@ body {
   overflow-x: hidden;
 }
 
-/* Fundo animado */
+/* fundo animado */
 @keyframes fundoAnimado {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Corações */
+/* container central */
+.container {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* corações */
 .heart {
   position: fixed;
   top: -10px;
@@ -38,15 +51,17 @@ body {
   }
 }
 
-/* Caixa de texto */
+/* caixa de texto */
 .caixa {
   background: rgba(0,0,0,0.55);
   border: 2px solid rgba(255,255,255,0.2);
   border-radius: 15px;
   padding: 20px;
-  margin: 20px;
+  margin: 20px auto;
   backdrop-filter: blur(6px);
   animation: aparecer 0.8s ease;
+  width: 95%;
+  max-width: 420px;
 }
 
 @keyframes aparecer {
@@ -54,7 +69,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Botão chamativo */
+/* botão chamativo */
 .btn-amor {
   background: linear-gradient(45deg, #ff4d6d, #c9184a);
   color: white;
@@ -66,21 +81,24 @@ body {
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   transition: 0.25s;
+  max-width: 90%;
 }
 
 .btn-amor:hover {
   transform: scale(1.08);
 }
 
-/* Galeria */
+/* galeria */
 .galeria {
   text-align: center;
   margin-top: 30px;
 }
 
 .img-box {
-  width: 300px;
-  height: 300px;
+  width: 90vw;
+  max-width: 320px;
+  height: 90vw;
+  max-height: 320px;
   margin: auto;
   border-radius: 20px;
   overflow: hidden;
@@ -109,7 +127,6 @@ body {
   margin: 0 10px;
 }
 
-/* esconder */
 .hidden {
   display: none;
 }
@@ -118,10 +135,12 @@ body {
 
 <body>
 
-<h1 style="text-align:center; margin-top:20px;">Minha galeria do amor 🤍</h1>
+<div class="container">
+
+<h1 style="text-align:center;">Minha galeria do amor 🤍</h1>
 
 <!-- TEXTO -->
-<div style="text-align:center; margin-top:20px;">
+<div style="text-align:center;">
   <h2>Sabe quanto tempo amo?</h2>
 
   <button class="btn-amor" onclick="mostrarTexto()">💌 Clique aqui</button>
@@ -173,8 +192,10 @@ body {
   </iframe>
 </div>
 
+</div>
+
 <script>
-// corações roxos
+// corações
 function criarCoracao() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
