@@ -13,7 +13,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* FUNDO ANIMADO */
 body{
   min-height:100vh;
   overflow-x:hidden;
@@ -38,10 +37,7 @@ body{
 body::before{
   content:"";
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 45%);
@@ -85,9 +81,9 @@ button{
   margin-top:10px;
 }
 
-/* TEXTO */
+/* caixa de texto */
 .box{
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.6);
   border:2px solid rgba(255,255,255,0.3);
   border-radius:15px;
   padding:20px;
@@ -103,7 +99,7 @@ button{
   to{transform:scale(1);opacity:1}
 }
 
-/* GALERIA */
+/* galeria */
 .gallery-container{
   margin-top:40px;
 }
@@ -126,7 +122,8 @@ button{
   object-fit:cover;
   border-radius:15px;
   border:3px solid rgba(255,255,255,0.5);
-  transition:0.5s;
+  transition:0.4s ease;
+  opacity:1;
 }
 
 .arrow{
@@ -150,35 +147,33 @@ button{
   <button onclick="toggleText()">Clique aqui</button>
 
   <div class="box" id="textBox">
-
     <h3>Mensagem</h3>
 
-    <p>Era uma vez, um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porem, ele se achava tão especial, que resolveu se afastar de seu mestre e viver sua propria vida.</p>
-      
-    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro! Um ogro terrivel, bruto, destrambelhado e violento</p>
+    <p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida.</p>
     
-    <p>Até que um dia do nada esse "ogro" conheceu uma princesa... Mal sabia ele que essa princesa mudaria a vida dele toda.</p>
+    <p>Mas pela soberba, ele cometeu tantos erros que acabou virando um ogro! Um ogro terrível, bruto, destrambelhado e violento.</p>
+    
+    <p>Até que um dia, do nada, esse "ogro" conheceu uma princesa... Mal sabia ele que essa princesa mudaria a vida dele toda.</p>
 
-    <p>A princesa viu ele, e ao contrario de todos ,ela não o temeu, ela o abraçou e de forma tão natural eles se tornaram amigos.</p>
-      
-    </p>Sem que ele percebesse, ela entrou na vida dele de um jeito tão simples, jamais ele imaginaria que se tornaria a pessoa mais valiosa da vida dele e que ele ia a amar tanto. Não foi forçado. Foi só acontecendo, devagar, sem pedir permissão.</p>
+    <p>A princesa o viu e, ao contrário de todos, ela não o temeu, ela o abraçou e, de forma tão natural, eles se tornaram amigos.</p>
+    
+    <p>Sem que ele percebesse, ela entrou na vida dele de um jeito tão simples, jamais ele imaginaria que se tornaria a pessoa mais valiosa da vida dele e que ele iria amá-la tanto. Não foi forçado. Foi só acontecendo, devagar, sem pedir permissão.</p>
 
-    <p>E aos poucos, o ogro foi percebendo o tanto que precisava da princesa. Ele percebeu que alguém como ele não seria digno de uma princesa tão linda.</p>
+    <p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. Ele percebeu que alguém como ele não seria digno de uma princesa tão linda.</p>
 
-    <p>Então ele decidi mudar. Se tornar melhor. A cada dia se aprimorar, melhorar meu auto-controle, ter dominio sobre seus instintos e sobre a sua brutalidade de querer resolver tudo no braço.</p>
+    <p>Então ele decidiu mudar. Se tornar melhor. A cada dia se aprimorar, melhorar seu autocontrole, ter domínio sobre seus instintos e sobre a sua brutalidade de querer resolver tudo no braço.</p>
 
-    <p>Porem ele sabia que não conseguiria fazer tudo sozinho. Então ele recorreu ao seu antigo mestre, que ele havia se afastado e nunca voltado, por vergonha de quem ele tinha se tornado.</p>
+    <p>Porém ele sabia que não conseguiria fazer tudo sozinho. Então ele recorreu ao seu antigo mestre, de quem havia se afastado e nunca voltado, por vergonha de quem ele tinha se tornado.</p>
 
-    <p>Diante do mestre, ele se ajoelhou, pediu misericordia e ajuda. Mesmo esperando rejeição o mestre, com os olhos em lagrimas, o abraçou. Disse que o esperava a muito tempo e aceitou ajuda-lo.</p>
+    <p>Diante do mestre, ele se ajoelhou, pediu misericórdia e ajuda. Mesmo esperando rejeição, o mestre, com os olhos em lágrimas, o abraçou. Disse que o esperava há muito tempo e aceitou ajudá-lo.</p>
 
     <p>Dessa forma, com a ajuda de seu mestre, o ogro quebrou sua maldição, voltando a ser homem novamente, indo rapidamente encontrar a princesa.</p>
 
-    <p>Ao ve-lo a princesa se surpreen8e diz estar horgulhosa dele, Dessa forma ele a pediu a mão dela em namoro</p>
+    <p>Ao vê-lo, a princesa se surpreendeu e disse estar orgulhosa dele. Dessa forma, ele a pediu em namoro.</p>
 
-    <p>Graças a princesa, o guerreiro conseguiu se encontrar devolta em seu caminho, retornar ao seu mestre, e voltar a ser humano. Ainda há muito a melhorar, mas agora ambos podem viver felizes e superar todas as dificuldades com a ajuda do mestre.</p>
+    <p>Graças à princesa, o guerreiro conseguiu se encontrar de volta em seu caminho, retornar ao seu mestre e voltar a ser humano. Ainda há muito a melhorar, mas agora ambos podem viver felizes e superar todas as dificuldades com a ajuda do mestre.</p>
 
-    <p>Pra surpresa de zero pessoas. O guerreiro era eu, a princesa era você e o mestre é Deus</p>
-
+    <p>Para surpresa de zero pessoas: o guerreiro era eu, a princesa era você e o mestre é Deus.</p>
   </div>
 
   <div class="gallery-container">
@@ -193,15 +188,17 @@ button{
 
   <div class="music">
     <h3>Nossa Música</h3>
+
     <iframe width="300" height="170"
-      src="https://www.youtube.com/embed?listType=search&list=De%20Love%20Pel%C3%A9%20Milflows"
-      frameborder="0" allowfullscreen>
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      allowfullscreen>
     </iframe>
   </div>
 
 </div>
 
 <script>
+
 // corações
 function createHearts(){
   const heart = document.createElement("div");
@@ -222,14 +219,13 @@ function toggleText(){
   box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
-// galeria atualizada
+// galeria
 let images = [
   "IMG-20260329-WA0058.jpg",
   "IMG-20260329-WA0057.jpg",
   "IMG_20260405_143701_412.webp",
   "IMG-20260329-WA0048.jpg",
   "IMG-20260329-WA0068.jpg",
-
   "IMG-20260329-WA0066.jpg",
   "IMG-20260329-WA0071.jpg",
   "IMG-20260329-WA0070.jpg",
@@ -261,6 +257,7 @@ function prev(){
   index = (index - 1 + images.length) % images.length;
   update();
 }
+
 </script>
 
 </body>
