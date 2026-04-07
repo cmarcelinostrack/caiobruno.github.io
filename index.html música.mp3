@@ -123,18 +123,23 @@ button{
   border-radius:15px;
   border:3px solid rgba(255,255,255,0.5);
   transition:0.4s ease;
-  opacity:1;
-}
-
-.arrow{
-  font-size:30px;
-  cursor:pointer;
-  user-select:none;
 }
 
 /* música */
 .music{
-  margin-top:40px;
+  margin-top:50px;
+  background: rgba(0,0,0,0.4);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.2);
+  display:inline-block;
+}
+
+.music button{
+  margin-top:10px;
+  background:#fff;
+  color:#000;
+  font-weight:bold;
 }
 </style>
 </head>
@@ -187,12 +192,16 @@ button{
   </div>
 
   <div class="music">
-    <h3>Nossa Música</h3>
+    <h3>Nossa Música 🎵</h3>
 
-    <iframe width="300" height="170"
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-      allowfullscreen>
-    </iframe>
+    <audio id="audio">
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <br>
+
+    <button onclick="toggleMusic()">▶ Tocar / Pausar</button>
   </div>
 
 </div>
@@ -256,6 +265,17 @@ function next(){
 function prev(){
   index = (index - 1 + images.length) % images.length;
   update();
+}
+
+// música
+const audio = document.getElementById("audio");
+
+function toggleMusic(){
+  if(audio.paused){
+    audio.play();
+  } else {
+    audio.pause();
+  }
 }
 
 </script>
