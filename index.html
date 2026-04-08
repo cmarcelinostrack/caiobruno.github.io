@@ -3,241 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Declaração de Amor</title>
+<title>História</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #2b0000, #5a001f, #2b0033, #1a0000);
-  background-size: 400% 400%;
-  animation: fundoAnimado 12s ease infinite;
-  color: white;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    overflow-x: hidden;
 }
 
-@keyframes fundoAnimado {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* container */
 .container {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 10px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.92);
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-/* corações */
-.heart {
-  position: fixed;
-  top: -10px;
-  color: rgba(180, 100, 255, 0.8);
-  animation: cair linear infinite;
-  font-size: 18px;
-  z-index: 0;
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
-@keyframes cair {
-  to { transform: translateY(110vh); }
+/* BOTÃO */
+.button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* caixa texto */
-.caixa {
-  background: rgba(0,0,0,0.55);
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px auto;
-  backdrop-filter: blur(6px);
-  width: 95%;
-  max-width: 420px;
+.button:active {
+    transform: scale(0.96);
 }
 
-/* botão */
-.btn-amor {
-  background: linear-gradient(45deg, #ff4d6d, #c9184a);
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: 0.25s;
-  max-width: 90%;
+/* GALERIA */
+.gallery {
+    margin-top: 30px;
+    text-align: center;
 }
 
-.btn-amor:hover {
-  transform: scale(1.08);
+.gallery img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: opacity 0.4s ease;
 }
 
-/* galeria */
-.galeria {
-  text-align: center;
-  margin-top: 30px;
+.btn-group {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
 
-.img-box {
-  width: 90vw;
-  max-width: 320px;
-  height: 90vw;
-  max-height: 320px;
-  margin: auto;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.3);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+.btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+    color: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.15s ease;
 }
 
-.img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.setas button {
-  background: #ffffff22;
-  border: none;
-  color: white;
-  font-size: 22px;
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 0 10px;
-}
-
-.hidden {
-  display: none;
+.btn:active {
+    transform: scale(0.95);
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1 style="text-align:center;">Minha galeria do amor 🤍</h1>
-
 <!-- TEXTO -->
-<div style="text-align:center;">
-  <h2>Sabe quanto tempo amo?</h2>
+<p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida. ⚔️</p>
 
-  <button class="btn-amor" onclick="mostrarTexto()">💌 Clique aqui</button>
+<p>Mas, pela soberba, ele cometeu tantos erros que acabou virando um ogro! Um ogro terrível, bruto, desajeitado e violento. 🐉</p>
 
-  <div id="texto" class="caixa hidden">
+<p>Até que um dia, esse "ogro" conheceu uma princesa... Mal sabia ele que essa princesa mudaria toda a sua vida. 👑</p>
 
-<p>Era uma vez um homem! Um guerreiro extremamente inteligente e com grande potencial, definitivamente ele era especial. Porém, ele se achava tão especial que resolveu se afastar de seu mestre e viver sua própria vida.</p>
+<p>A princesa o viu e, ao contrário de todos, não o temeu, ela o acolheu. 🤍</p>
 
-<p>Mas, pela soberba, ele cometeu tantos erros que acabou virando um ogro! Um ogro terrível, bruto, desajeitado e violento.</p>
+<p>Sem que ele percebesse, ela entrou na vida dele de um jeito simples. O ogro jamais imaginaria que ela se tornaria a pessoa mais valiosa da sua vida e que ele a amaria tanto. O sentimento de amor nasceu. Foi natural, devagar e espontâneo. 💞</p>
 
-<p>Até que um dia, esse "ogro" conheceu uma princesa... Mal sabia ele que essa princesa mudaria toda a sua vida.</p>
+<p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. Ele entendeu que alguém como ele não seria digno de uma princesa tão perfeita e delicada. 🌹</p>
 
-<p>A princesa o viu e, ao contrário de todos, não o temeu, ela o acolheu.</p>
+<p>Então ele decidiu mudar. Se tornar melhor. A cada dia se aprimorar, melhorar seu autocontrole e dominar seus impulsos. 🧠</p>
 
-<p>Sem que ele percebesse, ela entrou na vida dele de um jeito simples. O ogro jamais imaginaria que ela se tornaria a pessoa mais valiosa da sua vida e que ele a amaria tanto. O sentimento de amor nasceu. Não foi forçado, foi natural, devagar e expontaneo.</p>
+<p>Porém, ele sabia que não conseguiria fazer tudo sozinho. Então recorreu ao seu antigo mestre, de quem havia se afastado por vergonha de quem havia se tornado. 🕊️</p>
 
-<p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. Ele entendeu que alguém como ele não seria digno de uma princesa tão perfeita e delicada.</p>
+<p>Diante do mestre, ele se ajoelhou e pediu ajuda. Mesmo esperando rejeição, o mestre o abraçou e disse que o esperava há muito tempo. 🤝</p>
 
-<p>Então ele decidiu mudar. Se tornar melhor. A cada dia se aprimorar, melhorar seu autocontrole, ter domínio sobre seus instintos e sobre sua brutalidade de querer resolver tudo no impulso.</p>
+<p>Dessa forma, com a ajuda de seu mestre, o ogro quebrou sua maldição e voltou a ser homem novamente. ✨</p>
 
-<p>Porém, ele sabia que não conseguiria fazer tudo sozinho. Então recorreu ao seu antigo mestre, de quem havia se afastado e para quem nunca havia voltado, por vergonha de quem havia se tornado.</p>
+<p>Ao vê-lo, a princesa se surpreendeu e disse estar orgulhosa dele. Então ele confessou seus sentimentos — e ela também o amava. 💗</p>
 
-<p>Diante do mestre, ele se ajoelhou, pediu misericórdia e ajuda. Mesmo esperando rejeição, o mestre, com os olhos em lágrimas, o abraçou. Disse que o esperava há muito tempo e aceitou ajudá-lo.</p>
+<p>Graças à princesa, o guerreiro se reencontrou, voltou ao seu caminho e ao seu mestre. Ainda há muito a melhorar, mas agora podem seguir juntos. 🌿</p>
 
-<p>Dessa forma, com a ajuda de seu mestre, o ogro quebrou sua maldição, voltando a ser homem novamente e indo rapidamente encontrar a princesa.</p>
-
-<p>Ao vê-lo, a princesa se surpreendeu e disse estar orgulhosa dele. Então, ele confessou seus sentimentos a ela. E o sentimento era reciproco, ela também o amava.</p>
-
-<p>Graças à princesa, o guerreiro conseguiu se reencontrar em seu caminho, retornar ao seu mestre e voltar a ser humano. Ainda há muito a melhorar, mas agora ambos podem viver felizes e superar todas as dificuldades com a ajuda do mestre.</p>
-
-<p>E no fim... o guerreiro sou eu, a princesa é você e o mestre é Deus.</p>
-
-  </div>
-</div>
+<p>E no fim... o guerreiro sou eu, a princesa é você e o mestre é Deus. 🙏</p>
 
 <!-- GALERIA -->
-<div class="galeria">
-  <h2>Minha galeria do amor 🤍</h2>
+<div class="gallery">
+    <img id="foto" src="foto1.jpg" alt="foto">
 
-  <div class="img-box">
-    <img id="foto" src="IMG-20260329-WA0058.jpg">
-  </div>
-
-  <div class="setas">
-    <button onclick="voltar()">⬅</button>
-    <button onclick="avancar()">➡</button>
-  </div>
+    <div class="btn-group">
+        <button class="btn" onclick="voltar()">⟵</button>
+        <button class="btn" onclick="avancar()">⟶</button>
+    </div>
 </div>
 
-<!-- MÚSICA -->
-<div style="text-align:center; margin-top:40px;">
-  <h2>Nossa Música 🎵</h2>
-
-  <iframe width="300" height="170"
-    src="https://www.youtube.com/embed/o1DoLgoZD_k"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
+<!-- BOTÃO FINAL -->
+<a class="button" href="#">Continuar ❤️</a>
 
 </div>
 
 <script>
-// corações
-function criarCoracao() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💜";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 8000);
-}
-setInterval(criarCoracao, 300);
-
-// texto
-function mostrarTexto() {
-  document.getElementById("texto").classList.toggle("hidden");
-}
-
-// galeria
-const fotos = [
-"IMG-20260329-WA0058.jpg",
-"IMG-20260329-WA0057.jpg",
-"IMG_20260405_143701_412.webp",
-"IMG-20260329-WA0048.jpg",
-"IMG-20260329-WA0068.jpg",
-"IMG-20260329-WA0066.jpg",
-"IMG-20260329-WA0071.jpg",
-"IMG-20260329-WA0070.jpg",
-"IMG-20260329-WA0062.jpg",
-"IMG-20260329-WA0056.jpg",
-"IMG-20260329-WA0054.jpg",
-"IMG-20260329-WA0051.jpg"
-];
-
+let imagens = ["foto1.jpg", "foto2.jpg", "foto3.jpg"];
 let index = 0;
 
 function atualizar() {
-  document.getElementById("foto").src = fotos[index];
+    const img = document.getElementById("foto");
+    img.style.opacity = 0;
+
+    setTimeout(() => {
+        img.src = imagens[index];
+        img.style.opacity = 1;
+    }, 200);
 }
 
 function avancar() {
-  index = (index + 1) % fotos.length;
-  atualizar();
+    index = (index + 1) % imagens.length;
+    atualizar();
 }
 
 function voltar() {
-  index = (index - 1 + fotos.length) % fotos.length;
-  atualizar();
+    index = (index - 1 + imagens.length) % imagens.length;
+    atualizar();
 }
 </script>
 
