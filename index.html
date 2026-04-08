@@ -18,7 +18,7 @@ body {
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.95);
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ p {
     text-decoration: none;
     font-weight: bold;
     box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease;
 }
 
 .button:active {
@@ -63,7 +63,7 @@ p {
     max-width: 400px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
 }
 
 .btn-group {
@@ -106,27 +106,27 @@ p {
 
 <p>A princesa o viu e, ao contrário de todos, não o temeu, ela o acolheu. 🤍</p>
 
-<p>Sem que ele percebesse, ela entrou na vida dele de um jeito simples. O ogro jamais imaginaria que ela se tornaria a pessoa mais valiosa da sua vida e que ele a amaria tanto. O sentimento de amor nasceu. Foi natural, devagar e espontâneo. 💞</p>
+<p>Sem que ele percebesse, ela entrou na vida dele de um jeito simples. Ele jamais imaginaria que ela se tornaria a pessoa mais valiosa da sua vida e que ele a amaria tanto. 💞</p>
 
-<p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. Ele entendeu que alguém como ele não seria digno de uma princesa tão perfeita e delicada. 🌹</p>
+<p>E aos poucos, o ogro foi percebendo o quanto precisava da princesa. 🌹</p>
 
-<p>Então ele decidiu mudar. Se tornar melhor. A cada dia se aprimorar, melhorar seu autocontrole e dominar seus impulsos. 🧠</p>
+<p>Então ele decidiu mudar, melhorar seu autocontrole e seus impulsos. 🧠</p>
 
-<p>Porém, ele sabia que não conseguiria fazer tudo sozinho. Então recorreu ao seu antigo mestre, de quem havia se afastado por vergonha de quem havia se tornado. 🕊️</p>
+<p>Mas ele sabia que não conseguiria sozinho e voltou ao seu mestre. 🕊️</p>
 
-<p>Diante do mestre, ele se ajoelhou e pediu ajuda. Mesmo esperando rejeição, o mestre o abraçou e disse que o esperava há muito tempo. 🤝</p>
+<p>O mestre o abraçou e disse que o esperava há muito tempo. 🤝</p>
 
-<p>Dessa forma, com a ajuda de seu mestre, o ogro quebrou sua maldição e voltou a ser homem novamente. ✨</p>
+<p>Com isso, ele voltou a ser homem novamente. ✨</p>
 
-<p>Ao vê-lo, a princesa se surpreendeu e disse estar orgulhosa dele. Então ele confessou seus sentimentos — e ela também o amava. 💗</p>
+<p>A princesa se surpreendeu e disse estar orgulhosa dele. 💗</p>
 
-<p>Graças à princesa, o guerreiro se reencontrou, voltou ao seu caminho e ao seu mestre. Ainda há muito a melhorar, mas agora podem seguir juntos. 🌿</p>
+<p>Eles se amaram. O sentimento foi recíproco. 🌿</p>
 
 <p>E no fim... o guerreiro sou eu, a princesa é você e o mestre é Deus. 🙏</p>
 
-<!-- GALERIA -->
+<!-- GALERIA SIMPLES E SEGURA -->
 <div class="gallery">
-    <img id="foto" src="foto1.jpg" alt="foto">
+    <img id="foto" src="https://via.placeholder.com/400x300/ff4d6d/ffffff" alt="foto">
 
     <div class="btn-group">
         <button class="btn" onclick="voltar()">⟵</button>
@@ -140,17 +140,16 @@ p {
 </div>
 
 <script>
-let imagens = ["foto1.jpg", "foto2.jpg", "foto3.jpg"];
+let imagens = [
+    "https://via.placeholder.com/400x300/ff4d6d/ffffff",
+    "https://via.placeholder.com/400x300/8fd3f4/ffffff",
+    "https://via.placeholder.com/400x300/fd6c9e/ffffff"
+];
+
 let index = 0;
 
 function atualizar() {
-    const img = document.getElementById("foto");
-    img.style.opacity = 0;
-
-    setTimeout(() => {
-        img.src = imagens[index];
-        img.style.opacity = 1;
-    }, 200);
+    document.getElementById("foto").src = imagens[index];
 }
 
 function avancar() {
